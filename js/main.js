@@ -66,7 +66,7 @@ function changeCurrency() {
             break;
     }
 
-    document.getElementById("buttonExchange").value = selectedCurrency + "から円に両替";
+    document.getElementById("buttonExchange1").value = selectedCurrency + "から円に両替";
     document.getElementById("buttonExchange2").value = "円から" + selectedCurrency + "に両替";
 
 }

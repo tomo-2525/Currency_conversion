@@ -11,56 +11,57 @@
 </head>
 
 <body>
-    <!-- <from> -->
-    <tr>
-        <th>
-            1
-            <select id="currency" onchange="changeCurrency()">
-                <option value="円（日本）">円
-                <option value="オーストラリアドル(オーストラリア)">オーストラリアドル
-                <option value="クローナ（アイスランド）">クローナ
-                <option value="ゴールド(ドラクエ)">ゴールド
-                <option value="シャケル（イスラエル）">シャケル
-                <option value="ズウォティ（ポーランド）">ズウォティ
-                <option value="フィリピンペソ（フィリピン）">フィリピンペソ
-                <option value="ペリカ(カイジ)">ペリカ
-                <option value="米ドル（アメリカ）">米ドル
-                <option value="ユーロ（ヨーロッパ）">ユーロ
-            </select>
-            =
+    <div class=img>
+        <img src="./image/kabu_chart_smartphone_man_cry.png">
+        <img src="./image/kabu_chart_smartphone_man.png">
+        <img src="./image/kabu_chart_smartphone_man_happy.png">
+    </div>
 
-            <input type="number" step="0.1" id="rate" value="1" size="30">円
-        </th>
-    </tr>
+<h2>為替を計算しよう</h2>
+    1
+    <select id="currency" onchange="changeCurrency()">
+        <option value="円（日本）">円
+        <option value="オーストラリアドル(オーストラリア)">オーストラリアドル
+        <option value="クローナ（アイスランド）">クローナ
+        <option value="ゴールド(ドラクエ)">ゴールド
+        <option value="シャケル（イスラエル）">シャケル
+        <option value="ズウォティ（ポーランド）">ズウォティ
+        <option value="フィリピンペソ（フィリピン）">フィリピンペソ
+        <option value="ペリカ(カイジ)">ペリカ
+        <option value="米ドル（アメリカ）">米ドル
+        <option value="ユーロ（ヨーロッパ）">ユーロ
+    </select>
+    =
 
-
+    <input type="number" step="0.1" id="rate" value="1" size="30">円
     <br>
-    <input type="button" id="buttonExchange" value="円(日本)から円に両替" onclick="exchange('toYen')">
+    <br>
+    <input type="button" id="buttonExchange1" value="円(日本)から円に両替" onclick="exchange('toYen')">
     <input type="button" id="buttonExchange2" value="円から円（日本）に両替" onclick="exchange('fromYen')">
-    <input type="button" id="buttonExchange3" value="為替更新" onclick="getCurrency()">
+    <input type="button" value="為替更新" onclick="getCurrency()">
     <hr>
-    <table>
-        両替する金額：&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <th>
+    <form>
+        <table>
+            両替する金額：&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <th>
 
-            <input type=" number" id="inMoney" value="100" size="12">
-        </th>
-        <th>
-            <p id="currencyFrom">円</p>
-        </th>
+                <input type=" number" id="inMoney" value="100" size="12">
+            </th>
+            <th>
+                <p id="currencyFrom">円</p>
+            </th>
 
-        <th>
-            &nbsp;&nbsp;→→→&nbsp;&nbsp;
-        </th>
+            <th>
+                &nbsp;&nbsp;→→→&nbsp;&nbsp;
+            </th>
 
-        両替結果：
-        <th>
-            <p id="outMoney">----</p>
-        </th>
-    </table>
-
-    <!-- </from> -->
+            両替結果：
+            <th>
+                <p id="outMoney">----</p>
+            </th>
+        </table>
+    </form>
 </body>
 
 </html>
