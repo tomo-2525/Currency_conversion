@@ -5,19 +5,20 @@
     <meta charset="utf-8">
     <title>為替計算</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js"></script>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
     <div class=img>
-        <img src="./image/kabu_chart_smartphone_man_cry.png">
-        <img src="./image/kabu_chart_smartphone_man.png">
-        <img src="./image/kabu_chart_smartphone_man_happy.png">
+        <img src="./image/kabu_chart_smartphone_man_cry.png" class="img-fluid" alt="Responsive image">
+        <img src="./image/kabu_chart_smartphone_man.png" class="img-fluid" alt="Responsive image">
+        <img src="./image/kabu_chart_smartphone_man_happy.png" class="img-fluid" alt="Responsive image">
     </div>
 
-<h2>為替を計算しよう</h2>
+    <h2>為替を計算しよう</h2>
     1
     <select id="currency" onchange="changeCurrency()">
         <option value="円（日本）">円
@@ -39,6 +40,7 @@
     <input type="button" id="buttonExchange1" value="円(日本)から円に両替" onclick="exchange('toYen')">
     <input type="button" id="buttonExchange2" value="円から円（日本）に両替" onclick="exchange('fromYen')">
     <input type="button" value="為替更新" onclick="getCurrency()">
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
     <hr>
     <form>
         <table>
@@ -62,6 +64,18 @@
             </th>
         </table>
     </form>
+
+   
+    <script src="js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
