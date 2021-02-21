@@ -13,9 +13,9 @@
 
 <body>
     <div class=img>
-        <img src="./image/kabu_chart_smartphone_man_cry.png" >
-        <img src="./image/kabu_chart_smartphone_man.png" >
-        <img src="./image/kabu_chart_smartphone_man_happy.png" >
+        <img src="./image/kabu_chart_smartphone_man_cry.png">
+        <img src="./image/kabu_chart_smartphone_man.png">
+        <img src="./image/kabu_chart_smartphone_man_happy.png">
     </div>
 
     <h2>為替を計算しよう</h2>
@@ -43,29 +43,22 @@
     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
     <hr>
     <form>
-        <table>
-            両替する金額：&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <th>
 
-                <input type=" number" id="inMoney" value="100" size="12">
-            </th>
-            <th>
-                <p id="currencyFrom">円</p>
-            </th>
+        <div style="display:inline-flex">
+            両替する金額：
+            <input type=" number" id="inMoney" value="100" size="12">
+            <p id="currencyFrom">円</p>
+        </div>
 
-            <th>
-                &nbsp;&nbsp;→→→&nbsp;&nbsp;
-            </th>
-
-            両替結果：
-            <th>
-                <p id="outMoney">----</p>
-            </th>
-        </table>
+        <br>
+        &nbsp;&nbsp;↓↓↓↓↓↓&nbsp;&nbsp;
+        <br>
+        <div style="display:inline-flex">
+            両替結果：<p id="outMoney">----</p>
+        </div>
     </form>
 
-   
+
     <script src="js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
