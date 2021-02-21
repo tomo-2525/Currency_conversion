@@ -12,8 +12,9 @@ padding: 10px;
     font-size: 24px;
 }
 
-.img{
+.img img{
     text-align : center;
+    width: 33%;
 }
 
 h2{
