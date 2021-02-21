@@ -1,4 +1,12 @@
 var selectedCurrency = "ドル"; //  グローバル変数
+const puppeteer = require('puppeteer');
+const url = 'https://info.finance.yahoo.co.jp/fx/' // 任意のURL;
+async function getCurrency() {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    const response = await page.goto(url);
+    await browser.close();
+}
 
 function changeCurrency() {
     var currency = document.getElementById("currency");
