@@ -1,32 +1,65 @@
-var selectedCurrency = "ドル"; //  グローバル変数
-const puppeteer = require('puppeteer');
-const url = 'https://info.finance.yahoo.co.jp/fx/' // 任意のURL;
+var selectedCurrency = "オーストラリアドル(オーストラリア)";
+var rate_list = new Array();
+
+window.onload = function () {
+    getCurrency();
+}
+
 async function getCurrency() {
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-    const response = await page.goto(url);
-    await browser.close();
+    var request = new XMLHttpRequest();
+
+    request.open('GET', 'https://api.exchangeratesapi.io/latest', true);
+    request.responseType = 'json';
+
+    request.onload = function () {
+        var data = this.response;
+        var json = JSON.stringify(data.rates);;
+        rate_list = JSON.parse(json);
+        console.log(data);
+    };
+
+    request.send();
 }
 
 function changeCurrency() {
     var currency = document.getElementById("currency");
 
     selectedCurrency = currency.options[currency.selectedIndex].value;
-
     var rateElement = document.getElementById("rate");
 
     switch (selectedCurrency) {
-        case "ドル":
-            rateElement.value = 110;
-            break;
 
-        case "ペリカ(カイジ)":
-            rateElement.value = 0.1;
+        case "円（日本）":
+            rateElement.value = rate_list["JPY"] / rate_list["JPY"];
             break;
-
+        case "オーストラリアドル(オーストラリア)":
+            rateElement.value = rate_list["JPY"] / rate_list["AUD"];
+            break;
+        case "クローナ（アイスランド）":
+            rateElement.value = rate_list["JPY"] / rate_list["ISK"];
+            break;
         case "ゴールド(ドラクエ)":
             rateElement.value = 50;
             break;
+        case "シャケル（イスラエル）":
+            rateElement.value = rate_list["JPY"] / rate_list["SEK"];
+            break;
+        case "ズウォティ（ポーランド）":
+            rateElement.value = rate_list["JPY"] / rate_list["PLN"];
+            break;
+        case "フィリピンペソ（フィリピン）":
+            rateElement.value = rate_list["JPY"] / rate_list["PHP"];
+            break;
+        case "ペリカ(カイジ)":
+            rateElement.value = 0.1;
+            break;
+        case "米ドル（アメリカ）":
+            rateElement.value = rate_list["JPY"] / rate_list["USD"];
+            break;
+        case "ユーロ（ヨーロッパ）":
+            rateElement.value = rate_list["JPY"];
+            break;
+
 
             dafault:
             rareElement.value = -1;
